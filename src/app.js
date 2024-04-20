@@ -5,14 +5,17 @@ import { ClicksModule } from './modules/clicks.module';
 import { ShapeModule } from './modules/shape.module';
 import { VideoModule } from './modules/video.module';
 
+import { Message } from './modules/message.module';
 class App {
    #contextMenu;
    #backgroundModule;
    #clicksModule;
    #shapeModule;
+   #messageModule;
    #videoModule;
 
    constructor() {
+      this.#messageModule = new Message('Message', 'Рандомное сообщение');
       this.#shapeModule = new ShapeModule(
          'ShapeModule',
          'Create figure',
@@ -34,6 +37,7 @@ class App {
          this.#backgroundModule,
          this.#clicksModule,
          this.#shapeModule,
+         this.#messageModule,
          this.#videoModule,
       ]);
    }
