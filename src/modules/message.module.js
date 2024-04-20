@@ -12,15 +12,24 @@ export class Message extends Module {
         this.$rootElement = document.createElement('div');
         this.$rootElement.className = 'message';
 
+        this.addMessage();
+    }
+
+    addMessage() {
+        const existingMessageBox = this.$rootElement.querySelector('.random_message');
+        if (existingMessageBox) {
+            existingMessageBox.remove();
+        }
+      
         const $messageBox = document.createElement('div');
         $messageBox.className = 'random_message'; 
         $messageBox.textContent = Message.randomMessage(); 
         this.$rootElement.appendChild($messageBox);
-
+      
         setTimeout(() => {
             $messageBox.remove();
         }, 5000);
-    }
+      }
 
     trigger() {
         const clickModule = document.querySelector('.random_message'); 
@@ -30,7 +39,7 @@ export class Message extends Module {
     }
 
     showRandomMessage() {
-        console.log(Message.randomMessage());       
+        this.addMessage();     
     }
 
     static randomMessage() {
