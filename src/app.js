@@ -1,7 +1,6 @@
 import './styles.css';
 import { ContextMenu } from './menu';
 import { BackgroundModule } from './modules/background.module';
-import { ClicksModule } from './modules/clicks.module';
 import { ShapeModule } from './modules/shape.module';
 import { VideoModule } from './modules/video.module';
 
@@ -10,48 +9,43 @@ import { SecondsClickModule } from './modules/newClick';
 import { Message } from './modules/message.module';
 
 class App {
-   #contextMenu;
-   #backgroundModule;
-   #clicksModule;
-   #shapeModule;
-   #messageModule;
-   #videoModule;
-   #secondsClickModule;
+	#contextMenu;
+	#backgroundModule;
+	#shapeModule;
+	#messageModule;
+	#videoModule;
+	#secondsClickModule;
 
-   constructor() {
-      this.#secondsClickModule = new SecondsClickModule('clicker', 'Click New');
-      this.#messageModule = new Message('Message', 'Рандомное сообщение');
-      this.#shapeModule = new ShapeModule(
-         'ShapeModule',
-         'Генератор фигур',
-         document.body
-      );
-      this.#backgroundModule = new BackgroundModule(
-         'background',
-         'Поменять цвет фона'
-      );
-      //   this.#clicksModule = new ClicksModule(
-      //      'ClicksModule',
-      //      'Счетчик кликов',
-      //      document.body,
-      //      document.body,
-      //      5
-      //   );
-      this.#videoModule = new VideoModule('video', 'Открыть Pedro-енота');
-      this.#contextMenu = new ContextMenu('.menu', [
-         this.#backgroundModule,
-         //  this.#clicksModule,
-         this.#shapeModule,
-         this.#messageModule,
-         this.#videoModule,
-         this.#secondsClickModule,
-      ]);
-   }
+	constructor() {
+		this.#secondsClickModule = new SecondsClickModule(
+			'clicker',
+			'Счетчик кликов'
+		);
+		this.#messageModule = new Message('Message', 'Рандомное сообщение');
+		this.#shapeModule = new ShapeModule(
+			'ShapeModule',
+			'Генератор фигур',
+			document.body
+		);
+		this.#backgroundModule = new BackgroundModule(
+			'background',
+			'Поменять цвет фона'
+		);
 
-   run() {
-      this.#contextMenu.open();
-      this.#contextMenu.add();
-   }
+		this.#videoModule = new VideoModule('video', 'Открыть Pedro-енота');
+		this.#contextMenu = new ContextMenu('.menu', [
+			this.#backgroundModule,
+			this.#shapeModule,
+			this.#messageModule,
+			this.#videoModule,
+			this.#secondsClickModule,
+		]);
+	}
+
+	run() {
+		this.#contextMenu.open();
+		this.#contextMenu.add();
+	}
 }
 
 const app = new App();
