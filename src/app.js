@@ -18,7 +18,7 @@ class App {
 		this.#messageModule = new Message('Message', 'Рандомное сообщение');
 		this.#shapeModule = new ShapeModule(
 			'ShapeModule',
-			'Create figure',
+			'Генератор фигур',
 			document.body
 		);
 		this.#backgroundModule = new BackgroundModule(
@@ -27,7 +27,7 @@ class App {
 		);
 		this.#clicksModule = new ClicksModule(
 			'ClicksModule',
-			'Click',
+			'Счетчик кликов',
 			document.body,
 			document.body,
 			5
