@@ -1,176 +1,177 @@
 @import url('https://fonts.googleapis.com/css2?family=Cursive:wght@100;400&display=swap');
 
 * {
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 body {
-   background-color: #a8a8a8;
-   color: #515151;
-   font-size: 14px;
-   font-family: 'Comic Sans MS', cursive, sans-serif;
-   height: 100vh;
-   width: 100%;
-   padding: 2rem;
+	background-color: #a8a8a8;
+	color: #515151;
+	font-size: 14px;
+	font-family: 'Comic Sans MS', cursive, sans-serif;
+	height: 100vh;
+	width: 100%;
+	padding: 2rem;
 }
 
 span {
-   font-size: 24px;
-   position: relative;
-   font-weight: bold;
-   text-align: center;
-   vertical-align: middle;
+	font-size: 24px;
+	position: relative;
+	font-weight: bold;
+	text-align: center;
+	vertical-align: middle;
 }
 
 .menu {
-   position: fixed;
-   z-index: 2;
-   width: 150px;
-   background: #000000;
-   border-radius: 4px;
-   display: none;
-   list-style: none;
-   color: #828282;
-   transform: scale(1.5);
+	position: fixed;
+	z-index: 2;
+	width: 150px;
+	background: #000000;
+	border-radius: 4px;
+	display: none;
+	list-style: none;
+	color: #828282;
+	transform: scale(1.5);
 }
 
 .menu.open {
-   display: block;
+	display: block;
 }
 
 .menu.menu-item {
-   padding: 20px 24px;
-   font-size: 1rem;
-   color: #eee;
-   cursor: pointer;
-   transition: all 0.2s ease-in;
-   border-radius: inherit;
+	padding: 20px 24px;
+	font-size: 1rem;
+	color: #eee;
+	cursor: pointer;
+	transition: all 0.2s ease-in;
+	border-radius: inherit;
 }
 .menu-item {
-   padding: 5px;
+	padding: 5px;
 }
 
 .menu-item:not(:last-child) {
-   border-bottom: 1px solid #828282;
+	border-bottom: 1px solid #828282;
 }
 .menu-item:not(:last-child):hover {
-   border: 2px solid #828282;
+	border: 2px solid #828282;
 }
 .menu .menu-item:hover {
-   background: #555;
-   font-size: 17px;
-   cursor: pointer;
-   color: #fff;
-   border-radius: 4px;
-   /* transition: all 0.5s ease; */
+	background: #555;
+	font-size: 17px;
+	cursor: pointer;
+	color: #fff;
+	border-radius: 4px;
 }
 .menu .menu-item:active {
-   color: rgb(89, 28, 175);
-   background: rgb(32, 139, 185);
-   border: 2px solid rgb(89, 28, 175);
-   box-shadow: 0 3px 0px rgb(70, 22, 136);
+	color: rgb(89, 28, 175);
+	background: rgb(32, 139, 185);
+	border: 2px solid rgb(89, 28, 175);
+	box-shadow: 0 3px 0px rgb(70, 22, 136);
 }
 .random_message {
-   position: fixed;
-   bottom: 50px;
-   right: 30px;
-   background: radial-gradient(40% 50%, #faecd5, #cae4d8);
-   padding: 40px;
-   border-radius: 10px;
-   animation-duration: 0.5s;
-   animation-name: slide;
+	position: fixed;
+	bottom: 50px;
+	right: 30px;
+	background: radial-gradient(40% 50%, #faecd5, #cae4d8);
+	padding: 40px;
+	border-radius: 10px;
+	animation-duration: 0.5s;
+	animation-name: slide;
 }
 
 .hidden {
-   opacity: 0;
-   pointer-events: none;
+	opacity: 0;
+	pointer-events: none;
 }
 
 .notice-block {
-   min-width: 30%;
-   max-height: 50%;
-   position: absolute;
-   left: 50%;
-   top: 50%;
-   transform: translate(-50%, -50%);
-   transition: 1s ease-in-out;
+	min-width: 30%;
+	max-height: 50%;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	transition: 1s ease-in-out;
 }
 
 .notice-block h3 {
-   font-size: 24px;
-   position: relative;
-   font-weight: bold;
-   text-align: center;
+	font-size: 24px;
+	position: relative;
+	font-weight: bold;
+	text-align: center;
 }
 
 .timer {
-   position: absolute;
-   left: 50%;
-   transform: translate(-50%);
-   transition: 0.7s ease-in-out;
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%);
+	transition: 0.7s ease-in-out;
 }
 
 .seconds-form {
-   position: fixed;
-   top: 50px;
-   left: 50%;
-   transform: translateX(-50%);
-   text-align: center;
+	position: fixed;
+	top: 50px;
+	left: 50%;
+	transform: translateX(-50%);
+	text-align: center;
 }
 
 .seconds-input {
-   margin-bottom: 10px;
-   padding: 8px 12px;
-   font-size: 16px;
-   border-radius: 8px;
+	margin-bottom: 10px;
+	padding: 8px 12px;
+	font-size: 16px;
+	border-radius: 8px;
 }
 
 .submit-button {
-   padding: 10px 20px;
-   font-size: 18px;
-   background-color: #28ce31;
-   color: white;
-   border: none;
-   border-radius: 8px;
-   cursor: pointer;
-   transition: background-color 0.3s;
+	padding: 10px 20px;
+	font-size: 18px;
+	background-color: #28ce31;
+	color: white;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: background-color 0.3s;
 }
 
 .submit-button:hover {
-   background-color: #28ce31;
+	background-color: #3c713e;
+	box-shadow: 0 3px 0px #294c2a;
+	transition: all 0.2s ease-in;
 }
 
 .seconds-container {
-   position: fixed;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-   font-size: 36px;
-   font-weight: bold;
-   animation: countdown linear forwards var(--animation-duration);
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 36px;
+	font-weight: bold;
+	animation: countdown linear forwards var(--animation-duration);
 }
 
 @keyframes countdown {
-   from {
-      opacity: 1;
-      transform: translate(-50%, -50%);
-   }
-   to {
-      opacity: 0;
-      transform: translate(-50%, 100%);
-   }
+	from {
+		opacity: 1;
+		transform: translate(-50%, -50%);
+	}
+	to {
+		opacity: 0;
+		transform: translate(-50%, 100%);
+	}
 }
 
 @keyframes slide {
-   from {
-      margin-right: 100%;
-      width: auto;
-   }
+	from {
+		margin-right: 100%;
+		width: auto;
+	}
 
-   to {
-      margin-right: 0%;
-      width: auto;
-   }
+	to {
+		margin-right: 0%;
+		width: auto;
+	}
 }
