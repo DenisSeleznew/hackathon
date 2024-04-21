@@ -4,8 +4,8 @@ import { BackgroundModule } from './modules/background.module';
 import { ClicksModule } from './modules/clicks.module';
 import { ShapeModule } from './modules/shape.module';
 import { VideoModule } from './modules/video.module';
-
 import { Message } from './modules/message.module';
+
 class App {
    #contextMenu;
    #backgroundModule;

@@ -23,8 +23,6 @@ export class ContextMenu extends Menu {
 		this.el.classList.remove('open');
 	}
 	add() {
-		const li = document.querySelector('li');
-		console.log(li);
 		this.#itemArr.forEach(item => {
 			if (item instanceof Module) {
 				this.el.insertAdjacentHTML('beforeend', item.toHTML());

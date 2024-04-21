@@ -5,24 +5,24 @@ export class Message extends Module {
 	  super(type, text);
 	  this.container = container || document.body;	  
 	}
-  
+
 	trigger() {
-	const messageModule = document?.querySelector(`[data-type="${this.type}"]`);
-		messageModule.addEventListener('click', () => {
-		this.showRandomMessage()
-		  
-		});
+		const messageModule = document?.querySelector(`[data-type="${this.type}"]`);
+			messageModule.addEventListener('click', () => {
+			this.showRandomMessage()
+			  
+			});
+		  }
+		  showRandomMessage() {
+			const messageBox = document.createElement('div');
+			messageBox.className = 'random_message';
+			messageBox.textContent = this.randomMessage();
+			this.container.appendChild(messageBox);
+		
+		setTimeout(() => {
+		  messageBox.remove();
+		}, 5000);
 	  }
-	  showRandomMessage() {
-		const messageBox = document.createElement('div');
-        messageBox.className = 'random_message';
-        messageBox.textContent = this.randomMessage();
-        this.container.appendChild(messageBox);
-    
-    setTimeout(() => {
-      messageBox.remove();
-    }, 5000);
-  }
 
 		
 		randomMessage() {
