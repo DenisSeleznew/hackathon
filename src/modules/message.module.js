@@ -8,29 +8,33 @@ export class Message extends Module {
 	}
 
 	trigger() {
-		const messageModule = document?.querySelector(`[data-type="${this.type}"]`);
-			messageModule.addEventListener('click', () => {
-				if (this.currentMessageBox) {
-					this.currentMessageBox.remove();
-					this.currentMessageBox = null;
-				  }	
-			this.showRandomMessage()
-			  
-			});
-		  }
-		  showRandomMessage() {
-			const messageBox = document.createElement('div');
-			messageBox.className = 'random_message';
-			messageBox.textContent = this.randomMessage();
-			this.container.appendChild(messageBox);
-
-			this.currentMessageBox = messageBox;
-			
-		setTimeout(() => {
-		  messageBox.remove();
-		  this.currentMessageBox = null;
-		}, 5000);
-	  }
+		const messageModule = document?.querySelector(
+		   [`data-type="${this.type}"`]
+		);
+		messageModule.addEventListener('click', () => {
+		   if (!this.currentMessageBox) {
+			  this.showRandomMessage();
+		   }
+		});
+	 }
+	 showRandomMessage() {
+		if (this.currentMessageBox) {
+		   this.currentMessageBox.remove();
+		   clearTimeout(this.timeoutID);
+		}
+  
+		const messageBox = document.createElement('div');
+		messageBox.className = 'random_message';
+		messageBox.textContent = this.randomMessage();
+		this.container.appendChild(messageBox);
+  
+		this.currentMessageBox = messageBox;
+  
+		this.timeoutID = setTimeout(() => {
+		   messageBox.remove();
+		   this.currentMessageBox = null;
+		}, 3000);
+	 }
 
 		
 		randomMessage() {
@@ -55,8 +59,5 @@ export class Message extends Module {
 			return `<li class="menu-item" data-type="${this.type}">${this.text}</li>`;
 		}
 	
-
-
-
 	}
 	
