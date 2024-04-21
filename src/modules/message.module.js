@@ -3,12 +3,17 @@ import { Module } from '../core/module';
 export class Message extends Module {
 	constructor(type, text, container) {
 	  super(type, text);
-	  this.container = container || document.body;	  
+	  this.container = container || document.body;	 
+	  this.currentMessageBox = null; 
 	}
 
 	trigger() {
 		const messageModule = document?.querySelector(`[data-type="${this.type}"]`);
 			messageModule.addEventListener('click', () => {
+				if (this.currentMessageBox) {
+					this.currentMessageBox.remove();
+					this.currentMessageBox = null;
+				  }	
 			this.showRandomMessage()
 			  
 			});
@@ -18,9 +23,12 @@ export class Message extends Module {
 			messageBox.className = 'random_message';
 			messageBox.textContent = this.randomMessage();
 			this.container.appendChild(messageBox);
-		
+
+			this.currentMessageBox = messageBox;
+			
 		setTimeout(() => {
 		  messageBox.remove();
+		  this.currentMessageBox = null;
 		}, 5000);
 	  }
 
