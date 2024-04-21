@@ -70,6 +70,7 @@ export class SecondsClickModule extends Module {
             clearInterval(countdownInterval);
             secondsContainer.remove();
             alert(`Вы сделали ${clickCount} кликов за ${seconds} секунд.`);
+            document.body.removeEventListener('click', clickHandler);
          }
       }, 1000);
 
@@ -77,9 +78,5 @@ export class SecondsClickModule extends Module {
          clickCount++;
       };
       document.body.addEventListener('click', clickHandler);
-
-      countdownInterval.onend = () => {
-         document.body.removeEventListener('click', clickHandler);
-      };
    }
 }
