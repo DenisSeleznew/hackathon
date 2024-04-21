@@ -12,24 +12,25 @@ export class Message extends Module {
 		this.$rootElement = document.createElement('div');
 		this.$rootElement.className = 'message';
 
-        this.addMessage();
-    }
+		this.addMessage();
+	}
 
-    addMessage() {
-        const existingMessageBox = this.$rootElement.querySelector('.random_message');
-        if (existingMessageBox) {
-            existingMessageBox.remove();
-        }
-      
-        const $messageBox = document.createElement('div');
-        $messageBox.className = 'random_message'; 
-        $messageBox.textContent = Message.randomMessage(); 
-        this.$rootElement.appendChild($messageBox);
-      
-        setTimeout(() => {
-            $messageBox.remove();
-        }, 5000);
-      }
+	addMessage() {
+		const existingMessageBox =
+			this.$rootElement.querySelector('.random_message');
+		if (existingMessageBox) {
+			existingMessageBox.remove();
+		}
+
+		const $messageBox = document.createElement('div');
+		$messageBox.className = 'random_message';
+		$messageBox.textContent = Message.randomMessage();
+		this.$rootElement.appendChild($messageBox);
+
+		setTimeout(() => {
+			$messageBox.remove();
+		}, 5000);
+	}
 
 	trigger() {
 		const clickModule = document.querySelector(`[data-type='${this.type}']`);
@@ -38,9 +39,9 @@ export class Message extends Module {
 		});
 	}
 
-    showRandomMessage() {
-        this.addMessage();     
-    }
+	showRandomMessage() {
+		this.addMessage();
+	}
 
 	static randomMessage() {
 		const message = [
