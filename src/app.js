@@ -15,7 +15,7 @@ class App {
    #videoModule;
 
    constructor() {
-      this.#messageModule = new Message('Message', 'Рандомное сообщение');
+	  this.#messageModule = new Message('Message', 'Рандомное сообщение') ;
       this.#shapeModule = new ShapeModule(
          'ShapeModule',
          'Create figure',
