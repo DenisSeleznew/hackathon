@@ -3,16 +3,13 @@ import { Module } from '../core/module';
 export class Message extends Module {
 	constructor(type, text, container) {
 	  super(type, text);
-	  this.container = container || document.body;
-	  
+	  this.container = container || document.body;	  
 	}
   
 	trigger() {
 	const messageModule = document?.querySelector(`[data-type="${this.type}"]`);
-
 		messageModule.addEventListener('click', () => {
-			
-		  this.showRandomMessage()
+		this.showRandomMessage()
 		  
 		});
 	  }
@@ -45,6 +42,7 @@ export class Message extends Module {
 			const randomIndex = Math.floor(Math.random() * messages.length);
 			return messages[randomIndex];
 		} 
+
 		toHTML() {
 			return `<li class="menu-item" data-type="${this.type}">${this.text}</li>`;
 		}
